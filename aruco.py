@@ -121,6 +121,10 @@ def run_generate_40_aruco_markers(aruco_type, marker_width_pixels):
     aruco_marker = ArucoMarkers()
     aruco_marker.generate_multiple_aruco_markers(aruco_type, start_id=0, num_markers=40, marker_width_pixels=marker_width_pixels)
 
+def run_generate_num_aruco_markers(aruco_type, marker_width_pixels, num):
+    aruco_marker = ArucoMarkers()
+    aruco_marker.generate_multiple_aruco_markers(aruco_type, start_id=0, num_markers=num, marker_width_pixels=marker_width_pixels)
+
 # Run the pose estimation on detected ArUco markers
 def run_aruco_marker_pose_estimation(aruco_type): 
     aruco_marker = ArucoMarkers() 
@@ -137,5 +141,7 @@ if __name__ == '__main__':
     # Uncomment this to generate 40 ArUco markers
     # run_generate_40_aruco_markers(ArucoType.DICT_6X6_250, marker_width_pixels=200)
 
+
+    run_generate_num_aruco_markers(ArucoType.DICT_6X6_250, marker_width_pixels=200, num=250)
     # Uncomment this to run ArUco marker pose estimation
-    run_aruco_marker_pose_estimation(ArucoType.DICT_6X6_250)
+    # run_aruco_marker_pose_estimation(ArucoType.DICT_6X6_250)
